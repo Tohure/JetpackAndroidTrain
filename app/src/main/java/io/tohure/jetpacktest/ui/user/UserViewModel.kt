@@ -1,10 +1,10 @@
-package io.tohure.jetpacktest.ui.main
+package io.tohure.jetpacktest.ui.user
 
 import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
 
-class MainViewModel : ViewModel() {
+class UserViewModel : ViewModel() {
 
     private val _data = MutableLiveData<String>()
     private var id  = ""

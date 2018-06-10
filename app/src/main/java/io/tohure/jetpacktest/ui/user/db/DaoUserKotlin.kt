@@ -1,4 +1,4 @@
-package io.tohure.jetpacktest.ui.main.db
+package io.tohure.jetpacktest.ui.user.db
 
 import android.arch.lifecycle.LiveData
 import android.arch.persistence.room.*

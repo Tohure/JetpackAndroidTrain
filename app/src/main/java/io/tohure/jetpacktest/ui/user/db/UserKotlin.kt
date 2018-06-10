@@ -1,4 +1,4 @@
-package io.tohure.jetpacktest.ui.main.db
+package io.tohure.jetpacktest.ui.user.db
 
 import android.arch.persistence.room.Entity
 import android.arch.persistence.room.PrimaryKey

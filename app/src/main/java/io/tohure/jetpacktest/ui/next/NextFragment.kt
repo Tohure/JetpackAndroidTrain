@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 
 import io.tohure.jetpacktest.R
-import io.tohure.jetpacktest.ui.main.MainFragment
 
 class NextFragment : Fragment() {
 

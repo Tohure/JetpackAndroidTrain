@@ -27,11 +27,11 @@ dependencies {
     implementation 'com.android.support.constraint:constraint-layout:1.1.0'
 
     //Architecture
-    implementation 'android.arch.lifecycle:extensions:1.1.1' //LiveData, ViewModel
+    implementation 'android.arch.lifecycle:extensions:1.1.1' //Lifecycle, LiveData, ViewModel
     implementation 'android.arch.persistence.room:runtime:1.1.0' //Room
     implementation 'android.arch.navigation:navigation-fragment:1.0.0-alpha02' //Navigation
     implementation 'android.arch.navigation:navigation-ui:1.0.0-alpha02' //Navigation
-
+    implementation 'android.arch.work:work-runtime:1.0.0-alpha02' //Worker
 
 
     implementation 'com.android.support:support-v4:27.1.1'
