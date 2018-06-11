@@ -15,7 +15,7 @@ class UserLocationListener(
     @OnLifecycleEvent(Lifecycle.Event.ON_START)
     fun start() {
         if (enabled) {
-            // connect
+            // connect service
         }
     }
 
@@ -28,6 +28,6 @@ class UserLocationListener(
 
     @OnLifecycleEvent(Lifecycle.Event.ON_STOP)
     fun stop() {
-        // disconnect if connected
+        // disconnect if connected the service
     }
 }

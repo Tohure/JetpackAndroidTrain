@@ -23,15 +23,15 @@ class UserFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        userLocationListener = UserLocationListener(context!!, lifecycle) { location ->
 
+        //LifecycleObserver && LifecycleOwner
+        userLocationListener = UserLocationListener(context!!, lifecycle) { location ->
             // update UI or make something
             location.toString()
         }
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         return inflater.inflate(R.layout.main_fragment, container, false)
     }
 
@@ -46,7 +46,7 @@ class UserFragment : Fragment() {
         viewModel.data.observe(this, Observer {
             Toast.makeText(context, it, Toast.LENGTH_SHORT).show()
 
-            //LifecycleOwner
+            //LifecycleObserver
             userLocationListener.enable()
         })
     }
@@ -54,21 +54,22 @@ class UserFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        //Navigation
         btnNext.setOnClickListener {
             findNavController(this).navigate(R.id.action_homeFragment_to_nextFragment)
         }
 
         //Worker
-        val myConstraints = Constraints.Builder()
+        val rules = Constraints.Builder()
                 .setRequiresCharging(true)
                 .setRequiredNetworkType(NetworkType.CONNECTED)
                 .build()
 
         val userWork = OneTimeWorkRequest.Builder(UserWorker::class.java)
-                .setConstraints(myConstraints)
+                .setConstraints(rules)
                 .build()
-        WorkManager.getInstance().enqueue(userWork)
 
+        WorkManager.getInstance().enqueue(userWork)
         WorkManager.getInstance().getStatusById(userWork.id)
                 .observe(this, Observer { workStatus ->
                     // Do something with the status
