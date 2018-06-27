@@ -8,7 +8,7 @@
         android:id="@+id/homeFragment"
         android:name="io.tohure.jetpacktest.ui.user.UserFragment"
         android:label="main_fragment"
-        tools:layout="@layout/main_fragment" >
+        tools:layout="@layout/user_fragment" >
         <action
             android:id="@+id/action_homeFragment_to_nextFragment"
             app:destination="@id/nextFragment" />

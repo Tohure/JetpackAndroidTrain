@@ -12,13 +12,29 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".MainActivity">
+        <activity android:name=".ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+       <!-- <provider
+            android:name=".provider.MySliceProvider"
+            android:authorities="io.tohure.jetpacktest"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.app.slice.category.SLICE" />
+
+                <data
+                    android:host="tohure.io"
+                    android:pathPrefix="/"
+                    android:scheme="http" />
+            </intent-filter>
+        </provider>-->
     </application>
 
 </manifest>

@@ -1,7 +1,8 @@
-package io.tohure.jetpacktest
+package io.tohure.jetpacktest.ui
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import io.tohure.jetpacktest.R
 
 class MainActivity : AppCompatActivity() {
 

@@ -10,7 +10,6 @@ import io.tohure.jetpacktest.R
 import android.support.text.emoji.EmojiCompat
 import kotlinx.android.synthetic.main.fragment_next.*
 
-
 class NextFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,

@@ -14,7 +14,8 @@ import androidx.work.NetworkType
 import androidx.work.OneTimeWorkRequest
 import androidx.work.WorkManager
 import io.tohure.jetpacktest.R
-import kotlinx.android.synthetic.main.main_fragment.*
+
+import kotlinx.android.synthetic.main.user_fragment.btnNext
 
 class UserFragment : Fragment() {
 
@@ -32,7 +33,7 @@ class UserFragment : Fragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        return inflater.inflate(R.layout.main_fragment, container, false)
+        return inflater.inflate(R.layout.user_fragment, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -69,8 +70,8 @@ class UserFragment : Fragment() {
                 .setConstraints(rules)
                 .build()
 
-        WorkManager.getInstance().enqueue(userWork)
-        WorkManager.getInstance().getStatusById(userWork.id)
+        WorkManager.getInstance()?.enqueue(userWork)
+        WorkManager.getInstance()!!.getStatusById(userWork.id)
                 .observe(this, Observer { workStatus ->
                     // Do something with the status
                     if (workStatus != null && workStatus.state.isFinished) {
