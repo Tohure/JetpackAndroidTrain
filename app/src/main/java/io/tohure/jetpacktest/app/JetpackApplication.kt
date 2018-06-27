@@ -3,7 +3,6 @@ package io.tohure.jetpacktest.app
 import android.app.Application
 import android.support.text.emoji.EmojiCompat
 import android.support.text.emoji.FontRequestEmojiCompatConfig
-import android.R.array
 import android.support.annotation.Nullable
 import android.support.v4.provider.FontRequest
 import android.util.Log
