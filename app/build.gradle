@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: "androidx.navigation.safeargs"
 
 android {
     compileSdkVersion 28
@@ -25,33 +26,28 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     //Foundation
-    implementation 'androidx.core:core-ktx:0.3'
-    /*implementation 'androidx.appcompat:appcompat:1.0.0-alpha3'
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0-alpha3'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.2'*/
-
-    implementation 'com.android.support:appcompat-v7:27.1.1'
-    implementation 'com.android.support:support-v4:27.1.1'
-    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    implementation 'androidx.core:core-ktx:1.0.0'
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha2'
 
     //Architecture
-    implementation 'android.arch.lifecycle:extensions:1.1.1' //Lifecycle, LiveData, ViewModel
-    implementation 'android.arch.persistence.room:runtime:1.1.1' //Room
-    implementation 'android.arch.navigation:navigation-fragment:1.0.0-alpha02' //Navigation
-    implementation 'android.arch.navigation:navigation-ui:1.0.0-alpha02' //Navigation
-    implementation 'android.arch.work:work-runtime:1.0.0-alpha04' //Worker
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0' //Lifecycle, LiveData, ViewModel
+    implementation 'androidx.room:room-runtime:2.0.0-rc01' //Room
+    implementation 'android.arch.navigation:navigation-fragment-ktx:1.0.0-alpha06' //Navigation
+    implementation 'android.arch.navigation:navigation-ui-ktx:1.0.0-alpha06' //Navigation
+    implementation 'android.arch.work:work-runtime:1.0.0-alpha09' //Worker
 
     //UI
-    //implementation 'androidx.emoji:emoji:1.0.0-alpha3'
-    implementation 'com.android.support:support-emoji:27.1.1'
+    implementation 'androidx.emoji:emoji:1.0.0'
 
     //Behavior
-    /*implementation 'androidx.annotation:annotation:1.0.0-alpha3'
-    implementation 'androidx.slice:slice-core:1.0.0-alpha3'
-    implementation 'androidx.slice:slice-builders:1.0.0-alpha3'*/
+    implementation 'androidx.annotation:annotation:1.0.0'
+    implementation 'androidx.slice:slice-core:1.0.0'
+    implementation 'androidx.slice:slice-builders:1.0.0'
 
     //Test
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test:runner:1.1.0-alpha3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-alpha3'
+    androidTestImplementation 'androidx.test:runner:1.1.0-alpha4'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-alpha4'
 }

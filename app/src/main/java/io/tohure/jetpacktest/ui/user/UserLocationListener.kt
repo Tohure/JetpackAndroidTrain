@@ -1,9 +1,9 @@
 package io.tohure.jetpacktest.ui.user
 
-import android.arch.lifecycle.Lifecycle
-import android.arch.lifecycle.LifecycleObserver
 import android.content.Context
-import android.arch.lifecycle.OnLifecycleEvent
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleObserver
+import androidx.lifecycle.OnLifecycleEvent
 
 class UserLocationListener(
         val context: Context,

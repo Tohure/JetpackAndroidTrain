@@ -1,21 +1,20 @@
 package io.tohure.jetpacktest.ui.user
 
-import android.arch.lifecycle.Observer
-import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
-import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.navigation.fragment.NavHostFragment.findNavController
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.fragment.findNavController
 import androidx.work.Constraints
 import androidx.work.NetworkType
 import androidx.work.OneTimeWorkRequest
 import androidx.work.WorkManager
 import io.tohure.jetpacktest.R
-
-import kotlinx.android.synthetic.main.user_fragment.btnNext
+import kotlinx.android.synthetic.main.user_fragment.*
 
 class UserFragment : Fragment() {
 
@@ -57,7 +56,7 @@ class UserFragment : Fragment() {
 
         //Navigation
         btnNext.setOnClickListener {
-            findNavController(this).navigate(R.id.action_homeFragment_to_nextFragment)
+            findNavController().navigate(R.id.action_homeFragment_to_nextFragment)
         }
 
         //Worker
@@ -70,12 +69,17 @@ class UserFragment : Fragment() {
                 .setConstraints(rules)
                 .build()
 
-        WorkManager.getInstance()?.enqueue(userWork)
-        WorkManager.getInstance()!!.getStatusById(userWork.id)
+        WorkManager
+                .getInstance()
+                .enqueue(userWork)
+
+        WorkManager
+                .getInstance()
+                .getStatusById(userWork.id)
                 .observe(this, Observer { workStatus ->
                     // Do something with the status
                     if (workStatus != null && workStatus.state.isFinished) {
-                        // Make something
+                        // ...
                     }
                 })
     }

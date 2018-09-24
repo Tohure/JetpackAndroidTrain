@@ -20,7 +20,7 @@
             </intent-filter>
         </activity>
 
-       <!-- <provider
+        <provider
             android:name=".provider.MySliceProvider"
             android:authorities="io.tohure.jetpacktest"
             android:exported="true">
@@ -34,7 +34,7 @@
                     android:pathPrefix="/"
                     android:scheme="http" />
             </intent-filter>
-        </provider>-->
+        </provider>
     </application>
 
 </manifest>

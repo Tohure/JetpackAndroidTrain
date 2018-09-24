@@ -1,6 +1,6 @@
 package io.tohure.jetpacktest.provider
 
-/*import android.content.ContentResolver
+import android.content.ContentResolver
 import android.content.Intent
 import android.net.Uri
 
@@ -27,12 +27,12 @@ class MySliceProvider : SliceProvider() {
         if (intent == null) return uriBuilder.build()
         val data = intent.data
         if (data != null && data.path != null) {
-            val path = data.path.replace("/", "")
+            val path = data.path?.replace("/", "")
             uriBuilder = uriBuilder.path(path)
         }
         val context = context
         if (context != null) {
-            uriBuilder = uriBuilder.authority(context.getPackageName())
+            uriBuilder = uriBuilder.authority(context.packageName)
         }
         return uriBuilder.build()
     }
@@ -41,18 +41,18 @@ class MySliceProvider : SliceProvider() {
      * Construct the Slice and bind data if available.
      */
     override fun onBindSlice(sliceUri: Uri): Slice? {
-        val context = getContext() ?: return null
+        val context = context ?: return null
         return if (sliceUri.path == "/") {
             // Path recognized. Customize the Slice using the androidx.slice.builders API.
             // Note: ANR and StrictMode are enforced here so don't do any heavy operations. 
             // Only bind data that is currently available in memory.
             ListBuilder(context, sliceUri, ListBuilder.INFINITY)
-                    .addRow { it.setTitle("URI found.") }
+                    .addRow { it.title = "URI found." }
                     .build()
         } else {
             // Error: Path not found.
             ListBuilder(context, sliceUri, ListBuilder.INFINITY)
-                    .addRow { it.setTitle("URI not found.") }
+                    .addRow { it.title = "URI not found." }
                     .build()
         }
     }
@@ -72,4 +72,3 @@ class MySliceProvider : SliceProvider() {
         // Remove any observers if necessary to avoid memory leaks.
     }
 }
-*/
